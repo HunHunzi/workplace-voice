@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "职场最佳嘴替",
+  "version": "0.5.2",
+  "description": "将草稿整理为清晰的工作消息，可在独立整理台或飞书网页版中使用。",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://dashscope.aliyuncs.com/*",
+    "https://dashscope-intl.aliyuncs.com/*",
+    "https://dashscope-us.aliyuncs.com/*",
+    "https://*.maas.aliyuncs.com/*",
+    "https://api.openai.com/*"
+  ],
+  "optional_host_permissions": ["https://*/*"],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "职场最佳嘴替",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://feishu.cn/*",
+        "https://*.feishu.cn/*",
+        "https://larksuite.com/*",
+        "https://*.larksuite.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

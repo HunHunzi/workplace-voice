@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>职场最佳嘴替设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="settings-shell">
+      <header class="settings-header">
+        <div>
+          <p class="eyebrow">WORKPLACE VOICE</p>
+          <h1>职场最佳嘴替设置</h1>
+        </div>
+        <label class="switch-row" for="enabled">
+          <span>启用飞书快捷键</span>
+          <span class="switch">
+            <input id="enabled" name="enabled" type="checkbox" />
+            <span class="switch-track" aria-hidden="true"></span>
+          </span>
+        </label>
+      </header>
+
+      <form id="settings-form" class="settings-form">
+        <section class="settings-section" aria-labelledby="api-heading">
+          <div class="section-heading">
+            <h2 id="api-heading">API 服务</h2>
+            <span id="connection-badge" class="badge">未配置</span>
+          </div>
+
+          <label class="field" for="api-provider">
+            <span>提供商</span>
+            <select id="api-provider" name="apiProvider">
+              <option value="aliyun">阿里云百炼（默认）</option>
+              <option value="openai">OpenAI</option>
+              <option value="custom">自定义 OpenAI 兼容接口</option>
+            </select>
+          </label>
+
+          <label class="field" for="api-key">
+            <span id="api-key-label">阿里云百炼 API Key</span>
+            <input
+              id="api-key"
+              name="apiKey"
+              type="password"
+              autocomplete="off"
+              placeholder="sk-..."
+              spellcheck="false"
+            />
+            <small>不同提供商的配置分别保存；密钥不会写入项目文件。</small>
+          </label>
+
+          <label class="field" for="model">
+            <span>模型</span>
+            <input id="model" name="model" type="text" spellcheck="false" />
+          </label>
+
+          <label class="field" for="api-base-url">
+            <span>API Base URL</span>
+            <input id="api-base-url" name="apiBaseUrl" type="url" spellcheck="false" />
+            <small id="api-base-url-help">默认使用北京公共地址；使用业务空间专属地址时可替换。</small>
+          </label>
+        </section>
+
+        <section class="settings-section" aria-labelledby="style-heading">
+          <div class="section-heading">
+            <h2 id="style-heading">整理风格</h2>
+          </div>
+
+          <label class="mode-switch-row" for="corporate-jargon-enabled">
+            <span class="mode-copy">
+              <strong>大厂黑话版</strong>
+              <small>保留原意，将口语匹配为“颗粒度、输入、对齐、拉通、闭环”等表达。</small>
+            </span>
+            <span class="switch">
+              <input
+                id="corporate-jargon-enabled"
+                name="corporateJargonEnabled"
+                type="checkbox"
+              />
+              <span class="switch-track" aria-hidden="true"></span>
+            </span>
+          </label>
+
+          <label class="field" for="custom-instructions">
+            <span>补充要求</span>
+            <textarea
+              id="custom-instructions"
+              name="customInstructions"
+              rows="5"
+              placeholder="例如：语气更亲切；把待办事项放在最后；称呼保留原样。"
+            ></textarea>
+            <small>基础规则会自动保留事实、数字、时间、链接和责任人，并删除重复内容。</small>
+          </label>
+        </section>
+
+        <section class="workflow-band" aria-label="快捷键流程">
+          <div>
+            <span class="step-number">1</span>
+            <p><strong>⌘ Enter</strong><span>整理并回填</span></p>
+          </div>
+          <span class="step-arrow" aria-hidden="true">→</span>
+          <div>
+            <span class="step-number">2</span>
+            <p><strong>检查内容</strong><span>可继续修改</span></p>
+          </div>
+          <span class="step-arrow" aria-hidden="true">→</span>
+          <div>
+            <span class="step-number">3</span>
+            <p><strong>⌘ Enter</strong><span>确认发送</span></p>
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+          <button id="test-button" class="button button-secondary" type="button">测试配置</button>
+          <button class="button button-primary" type="submit">保存设置</button>
+        </div>
+      </form>
+
+      <section id="test-result" class="test-result" hidden aria-labelledby="test-result-heading">
+        <h2 id="test-result-heading">测试结果</h2>
+        <pre id="test-output"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

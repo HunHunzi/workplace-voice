@@ -1,0 +1,49 @@
+#fmo-toast.fmo-toast {
+  position: fixed;
+  z-index: 2147483647;
+  right: 24px;
+  bottom: 88px;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 10px 14px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+  color: #ffffff;
+  font: 500 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+#fmo-toast.fmo-toast[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#fmo-toast.fmo-toast-info {
+  background: #1f2937;
+}
+
+#fmo-toast.fmo-toast-success {
+  background: #087f5b;
+}
+
+#fmo-toast.fmo-toast-error {
+  background: #b42318;
+}
+
+.fmo-editor-busy {
+  opacity: 0.66 !important;
+  transition: opacity 160ms ease;
+}
+
+@media (max-width: 640px) {
+  #fmo-toast.fmo-toast {
+    right: 16px;
+    bottom: 72px;
+    left: 16px;
+    max-width: none;
+  }
+}

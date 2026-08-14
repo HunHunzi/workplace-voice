@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>职场最佳嘴替</title>
+    <link rel="stylesheet" href="workspace.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">WORKPLACE VOICE</p>
+        <h1>职场最佳嘴替</h1>
+      </div>
+      <div class="topbar-actions">
+        <span id="model-label" class="model-label">读取配置中...</span>
+        <button id="settings-button" class="button button-secondary" type="button">设置</button>
+      </div>
+    </header>
+
+    <main class="workspace-shell">
+      <div class="workspace-toolbar">
+        <p id="status" class="status" role="status" aria-live="polite">准备就绪</p>
+        <div class="toolbar-actions">
+          <button id="clear-button" class="button button-secondary" type="button">清空</button>
+          <button id="organize-button" class="button button-primary" type="button">整理内容</button>
+        </div>
+      </div>
+
+      <div class="editor-grid">
+        <section class="editor-panel" aria-labelledby="input-heading">
+          <header class="editor-header">
+            <h2 id="input-heading">原始内容</h2>
+            <span id="input-count" class="character-count">0 / 12000</span>
+          </header>
+          <textarea
+            id="source-input"
+            aria-label="原始内容"
+            placeholder="输入需要整理的内容"
+            autofocus
+          ></textarea>
+        </section>
+
+        <section class="editor-panel output-panel" aria-labelledby="output-heading">
+          <header class="editor-header">
+            <h2 id="output-heading">整理结果</h2>
+            <button id="copy-button" class="copy-button" type="button" disabled>复制结果</button>
+          </header>
+          <textarea
+            id="result-output"
+            aria-label="整理结果"
+            placeholder="整理结果"
+            readonly
+          ></textarea>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="workspace.js"></script>
+  </body>
+</html>

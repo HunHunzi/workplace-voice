@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>职场最佳嘴替</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header>
+        <div>
+          <p class="eyebrow">WORKPLACE VOICE</p>
+          <h1>职场最佳嘴替</h1>
+        </div>
+        <label class="switch" aria-label="启用飞书快捷键">
+          <input id="enabled" type="checkbox" />
+          <span class="switch-track" aria-hidden="true"></span>
+        </label>
+      </header>
+
+      <div class="status-row">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="status-text">正在检查配置...</span>
+      </div>
+
+      <label class="mode-switch-row" for="corporate-jargon-enabled">
+        <span class="mode-copy">
+          <strong>大厂黑话版</strong>
+          <small id="corporate-jargon-status">已关闭</small>
+        </span>
+        <span class="switch">
+          <input id="corporate-jargon-enabled" type="checkbox" />
+          <span class="switch-track" aria-hidden="true"></span>
+        </span>
+      </label>
+
+      <div class="popup-actions">
+        <button id="workspace-button" class="button button-primary" type="button">打开整理台</button>
+        <button id="settings-button" class="button button-secondary" type="button">设置</button>
+      </div>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
