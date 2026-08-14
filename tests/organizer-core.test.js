@@ -55,6 +55,13 @@ test("default instructions enforce the agreed workplace style", () => {
   assert.match(DEFAULT_INSTRUCTIONS, /不要自动添加“结论：”“需确认：”/);
   assert.match(DEFAULT_INSTRUCTIONS, /不长于原文/);
   assert.match(DEFAULT_INSTRUCTIONS, /API 和之前的差别好像挺大/);
+  assert.match(DEFAULT_INSTRUCTIONS, /长内容包含三个以上独立事项时/);
+  assert.match(DEFAULT_INSTRUCTIONS, /@Joel Joel老师/);
+  assert.match(DEFAULT_INSTRUCTIONS, /@黄子轩 子轩老师/);
+  assert.match(DEFAULT_INSTRUCTIONS, /负责人待确认/);
+  assert.match(DEFAULT_INSTRUCTIONS, /每个链接单独占一行/);
+  assert.match(DEFAULT_INSTRUCTIONS, /测试原定周四下午/);
+  assert.match(DEFAULT_INSTRUCTIONS, /字号、间距和变量色由前端实现/);
   assert.doesNotMatch(DEFAULT_INSTRUCTIONS, /存在两个及以上独立事项时，必须使用/);
 });
 
