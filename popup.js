@@ -95,7 +95,7 @@ function updateStatus(enabled, configured, providerLabel) {
 }
 
 function updateJargonMode(enabled) {
-  corporateJargonStatus.textContent = enabled ? "已开启，智能匹配职场术语" : "已关闭";
+  corporateJargonStatus.textContent = enabled ? "已开启，中英混搭表达" : "已关闭";
 }
 
 function getSafeProvider(provider) {

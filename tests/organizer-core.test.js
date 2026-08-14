@@ -78,13 +78,19 @@ test("corporate jargon mode adds contextual vocabulary rules", () => {
 
   assert.doesNotMatch(regularBody.messages[0].content, /大厂黑话版/);
   assert.match(jargonBody.messages[0].content, /大厂黑话版/);
-  assert.match(jargonBody.messages[0].content, /拉通/);
-  assert.match(jargonBody.messages[0].content, /闭环/);
+  assert.match(jargonBody.messages[0].content, /中英混搭/);
+  assert.match(jargonBody.messages[0].content, /完成、做完、结束.*done/);
+  assert.match(jargonBody.messages[0].content, /批准、同意申请、审批通过.*approve/);
+  assert.match(jargonBody.messages[0].content, /owner.*deadline.*TBD/);
+  assert.match(jargonBody.messages[0].content, /QA sync/);
+  assert.match(jargonBody.messages[0].content, /blocker.*done 后给到我/);
+  assert.match(jargonBody.messages[0].content, /完整 JSON.*不得替换/);
+  assert.match(jargonBody.messages[0].content, /审核内容、代码评审、检查.*不得一律替换/);
   assert.match(CORPORATE_JARGON_INSTRUCTIONS, /不是把原话扩写成流程、清单或汇报材料/);
   assert.match(CORPORATE_JARGON_INSTRUCTIONS, /不要擅自改成“需确认：”“待办：”/);
   assert.match(CORPORATE_JARGON_INSTRUCTIONS, /梳理清单、与相关方核实/);
-  assert.match(CORPORATE_JARGON_INSTRUCTIONS, /你需要对齐颗粒度，有足够的输入给到我/);
-  assert.doesNotMatch(CORPORATE_JARGON_INSTRUCTIONS, /每个要点最多使用 1 至 2 个/);
+  assert.match(CORPORATE_JARGON_INSTRUCTIONS, /你需要对齐颗粒度，有足够的 input 给到我/);
+  assert.match(CORPORATE_JARGON_INSTRUCTIONS, /不随时态改写为 approved、finished/);
 });
 
 test("buildRequestBody rejects empty drafts", () => {

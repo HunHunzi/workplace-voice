@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "职场最佳嘴替",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "将草稿整理为清晰的工作消息，可在独立整理台或飞书网页版中使用。",
   "permissions": ["storage"],
   "host_permissions": [
